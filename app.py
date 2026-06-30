@@ -18,7 +18,7 @@ keyword = st.text_input(
     value=DEFAULT_KEYWORDS
 )
 
-max_results = st.slider("가져올 논문 수", 3, 10, 5)
+max_results = st.slider("가져올 논문 수", 1, 5, 3)
 
 def search_arxiv(query, max_results=5):
     encoded_query = urllib.parse.quote(query)
@@ -67,7 +67,7 @@ def summarize_paper(paper):
 """
 
     response = client.responses.create(
-        model="gpt-4.1-mini",
+        model="gpt-4o-mini",
         input=prompt
     )
 
